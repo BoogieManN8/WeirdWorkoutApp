@@ -1,18 +1,11 @@
-//
-//  ContentView.swift
-//  WeirdWorkoutApp
-//
-//  Created by MoonlitPrins8 on 19.02.24.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundStyle(.tint)
+                
             Text("Hello, world!")
         }
         .padding()
@@ -20,5 +13,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }
