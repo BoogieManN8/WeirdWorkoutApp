@@ -7,18 +7,77 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE1302572B8B82B200B0BA92 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1302562B8B82B200B0BA92 /* HistoryView.swift */; };
+		DE1302592B8BB3AA00B0BA92 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1302582B8BB3AA00B0BA92 /* CoreDataManager.swift */; };
+		DE13025C2B8BB4B300B0BA92 /* WorkoutDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE13025A2B8BB4B300B0BA92 /* WorkoutDataModel.xcdatamodeld */; };
 		DE2339192B8371680093BBA2 /* WeirdWorkoutAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339182B8371680093BBA2 /* WeirdWorkoutAppApp.swift */; };
-		DE23391B2B8371680093BBA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23391A2B8371680093BBA2 /* ContentView.swift */; };
+		DE23391B2B8371680093BBA2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23391A2B8371680093BBA2 /* MainView.swift */; };
 		DE23391D2B83716A0093BBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE23391C2B83716A0093BBA2 /* Assets.xcassets */; };
 		DE2339202B83716A0093BBA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE23391F2B83716A0093BBA2 /* Preview Assets.xcassets */; };
+		DE23392C2B8373DA0093BBA2 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23392B2B8373DA0093BBA2 /* Color+Ext.swift */; };
+		DE2339322B8378120093BBA2 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339312B8378120093BBA2 /* Font+Ext.swift */; };
+		DE2339362B84B4980093BBA2 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE2339352B84B4980093BBA2 /* Montserrat-Bold.ttf */; };
+		DE2339382B84B4A40093BBA2 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE2339372B84B4A40093BBA2 /* Montserrat-Medium.ttf */; };
+		DE23393A2B84B4AE0093BBA2 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE2339392B84B4AE0093BBA2 /* Montserrat-SemiBold.ttf */; };
+		DE23393C2B84B6BC0093BBA2 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23393B2B84B6BC0093BBA2 /* AuthViewModel.swift */; };
+		DE23393E2B84B7630093BBA2 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23393D2B84B7630093BBA2 /* UserManager.swift */; };
+		DE2339402B84BC870093BBA2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23393F2B84BC870093BBA2 /* UserModel.swift */; };
+		DE2339442B84BF570093BBA2 /* OnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339432B84BF570093BBA2 /* OnBoardViewModel.swift */; };
+		DE2339472B84BFA00093BBA2 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339462B84BFA00093BBA2 /* OnBoardView.swift */; };
+		DE23394B2B84BFCB0093BBA2 /* OnBoardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23394A2B84BFCB0093BBA2 /* OnBoardingViewModel.swift */; };
+		DE23394D2B84BFEB0093BBA2 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23394C2B84BFEB0093BBA2 /* OnBoardingView.swift */; };
+		DE2339502B85299B0093BBA2 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23394F2B85299B0093BBA2 /* VideoPlayerView.swift */; };
+		DE2339522B8651CE0093BBA2 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339512B8651CE0093BBA2 /* NetworkingManager.swift */; };
+		DE2339542B865CEB0093BBA2 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339532B865CEB0093BBA2 /* WorkoutModel.swift */; };
+		DE2339562B8666970093BBA2 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339552B8666970093BBA2 /* KeyChainManager.swift */; };
+		DE2339592B8798440093BBA2 /* WorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339582B8798440093BBA2 /* WorkoutCardView.swift */; };
+		DE23395B2B8799140093BBA2 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23395A2B8799140093BBA2 /* AsyncImage.swift */; };
+		DE23395D2B879E5D0093BBA2 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23395C2B879E5D0093BBA2 /* CustomOverlay.swift */; };
+		DE23395F2B87A2EA0093BBA2 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23395E2B87A2EA0093BBA2 /* BottomSheet.swift */; };
+		DE2339612B87C1D60093BBA2 /* CornerRadius+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339602B87C1D60093BBA2 /* CornerRadius+Ext.swift */; };
+		DEB9FA652B8919470048A64B /* WorkoutLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA642B8919470048A64B /* WorkoutLevelSelector.swift */; };
+		DEB9FA682B89209B0048A64B /* EulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA672B89209B0048A64B /* EulaView.swift */; };
+		DEB9FA6A2B8921480048A64B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA692B8921480048A64B /* SettingsView.swift */; };
+		DEB9FA6C2B8928AB0048A64B /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA6B2B8928AB0048A64B /* ExerciseDetailView.swift */; };
+		DEB9FA6E2B8A33260048A64B /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA6D2B8A33260048A64B /* VideoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE1302562B8B82B200B0BA92 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		DE1302582B8BB3AA00B0BA92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DE13025B2B8BB4B300B0BA92 /* Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workout.xcdatamodel; sourceTree = "<group>"; };
 		DE2339152B8371680093BBA2 /* WeirdWorkoutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeirdWorkoutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2339182B8371680093BBA2 /* WeirdWorkoutAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeirdWorkoutAppApp.swift; sourceTree = "<group>"; };
-		DE23391A2B8371680093BBA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE23391A2B8371680093BBA2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DE23391C2B83716A0093BBA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE23391F2B83716A0093BBA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE23392B2B8373DA0093BBA2 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		DE2339312B8378120093BBA2 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		DE2339332B837A0E0093BBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DE2339352B84B4980093BBA2 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		DE2339372B84B4A40093BBA2 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DE2339392B84B4AE0093BBA2 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		DE23393B2B84B6BC0093BBA2 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		DE23393D2B84B7630093BBA2 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		DE23393F2B84BC870093BBA2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DE2339432B84BF570093BBA2 /* OnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewModel.swift; sourceTree = "<group>"; };
+		DE2339462B84BFA00093BBA2 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		DE23394A2B84BFCB0093BBA2 /* OnBoardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewModel.swift; sourceTree = "<group>"; };
+		DE23394C2B84BFEB0093BBA2 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		DE23394F2B85299B0093BBA2 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		DE2339512B8651CE0093BBA2 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		DE2339532B865CEB0093BBA2 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
+		DE2339552B8666970093BBA2 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		DE2339582B8798440093BBA2 /* WorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCardView.swift; sourceTree = "<group>"; };
+		DE23395A2B8799140093BBA2 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		DE23395C2B879E5D0093BBA2 /* CustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
+		DE23395E2B87A2EA0093BBA2 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		DE2339602B87C1D60093BBA2 /* CornerRadius+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Ext.swift"; sourceTree = "<group>"; };
+		DEB9FA642B8919470048A64B /* WorkoutLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLevelSelector.swift; sourceTree = "<group>"; };
+		DEB9FA672B89209B0048A64B /* EulaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaView.swift; sourceTree = "<group>"; };
+		DEB9FA692B8921480048A64B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DEB9FA6B2B8928AB0048A64B /* ExerciseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailView.swift; sourceTree = "<group>"; };
+		DEB9FA6D2B8A33260048A64B /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +110,12 @@
 		DE2339172B8371680093BBA2 /* WeirdWorkoutApp */ = {
 			isa = PBXGroup;
 			children = (
-				DE2339182B8371680093BBA2 /* WeirdWorkoutAppApp.swift */,
-				DE23391A2B8371680093BBA2 /* ContentView.swift */,
+				DE2339332B837A0E0093BBA2 /* Info.plist */,
+				DE2339262B8373680093BBA2 /* App */,
+				DE2339412B84BC8F0093BBA2 /* Models */,
+				DE2339292B83739F0093BBA2 /* Helpers */,
+				DE23392E2B83778F0093BBA2 /* Utilities */,
+				DE23392D2B83778B0093BBA2 /* Core */,
 				DE23391C2B83716A0093BBA2 /* Assets.xcassets */,
 				DE23391E2B83716A0093BBA2 /* Preview Content */,
 			);
@@ -65,6 +128,168 @@
 				DE23391F2B83716A0093BBA2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE2339262B8373680093BBA2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339282B8373790093BBA2 /* ViewModels */,
+				DE2339272B8373750093BBA2 /* Views */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DE2339272B8373750093BBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339182B8371680093BBA2 /* WeirdWorkoutAppApp.swift */,
+				DE23391A2B8371680093BBA2 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE2339282B8373790093BBA2 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DE23393B2B84B6BC0093BBA2 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DE2339292B83739F0093BBA2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DE23394E2B85298F0093BBA2 /* Views */,
+				DE2339342B84B48B0093BBA2 /* Fonts */,
+				DE23392A2B8373CB0093BBA2 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DE23392A2B8373CB0093BBA2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE23392B2B8373DA0093BBA2 /* Color+Ext.swift */,
+				DE2339312B8378120093BBA2 /* Font+Ext.swift */,
+				DE2339602B87C1D60093BBA2 /* CornerRadius+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE23392D2B83778B0093BBA2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DE23392F2B83779B0093BBA2 /* OnBoarding */,
+				DE2339302B8377A00093BBA2 /* OnBoard */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DE23392E2B83778F0093BBA2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE23393D2B84B7630093BBA2 /* UserManager.swift */,
+				DE2339512B8651CE0093BBA2 /* NetworkingManager.swift */,
+				DE2339552B8666970093BBA2 /* KeyChainManager.swift */,
+				DE1302582B8BB3AA00B0BA92 /* CoreDataManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DE23392F2B83779B0093BBA2 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339482B84BFB00093BBA2 /* ViewModel */,
+				DE2339492B84BFB50093BBA2 /* View */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		DE2339302B8377A00093BBA2 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339422B84BF3B0093BBA2 /* ViewModel */,
+				DE2339452B84BF930093BBA2 /* Views */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		DE2339342B84B48B0093BBA2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339392B84B4AE0093BBA2 /* Montserrat-SemiBold.ttf */,
+				DE2339372B84B4A40093BBA2 /* Montserrat-Medium.ttf */,
+				DE2339352B84B4980093BBA2 /* Montserrat-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DE2339412B84BC8F0093BBA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE23393F2B84BC870093BBA2 /* UserModel.swift */,
+				DE2339532B865CEB0093BBA2 /* WorkoutModel.swift */,
+				DE13025A2B8BB4B300B0BA92 /* WorkoutDataModel.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE2339422B84BF3B0093BBA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339432B84BF570093BBA2 /* OnBoardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DE2339452B84BF930093BBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339572B8798330093BBA2 /* SubViews */,
+				DE2339462B84BFA00093BBA2 /* OnBoardView.swift */,
+				DEB9FA692B8921480048A64B /* SettingsView.swift */,
+				DEB9FA6B2B8928AB0048A64B /* ExerciseDetailView.swift */,
+				DE1302562B8B82B200B0BA92 /* HistoryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE2339482B84BFB00093BBA2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE23394A2B84BFCB0093BBA2 /* OnBoardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DE2339492B84BFB50093BBA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DE23394C2B84BFEB0093BBA2 /* OnBoardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DE23394E2B85298F0093BBA2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE23394F2B85299B0093BBA2 /* VideoPlayerView.swift */,
+				DE23395A2B8799140093BBA2 /* AsyncImage.swift */,
+				DE23395C2B879E5D0093BBA2 /* CustomOverlay.swift */,
+				DE23395E2B87A2EA0093BBA2 /* BottomSheet.swift */,
+				DEB9FA672B89209B0048A64B /* EulaView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE2339572B8798330093BBA2 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE2339582B8798440093BBA2 /* WorkoutCardView.swift */,
+				DEB9FA642B8919470048A64B /* WorkoutLevelSelector.swift */,
+				DEB9FA6D2B8A33260048A64B /* VideoView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +352,9 @@
 			files = (
 				DE2339202B83716A0093BBA2 /* Preview Assets.xcassets in Resources */,
 				DE23391D2B83716A0093BBA2 /* Assets.xcassets in Resources */,
+				DE2339382B84B4A40093BBA2 /* Montserrat-Medium.ttf in Resources */,
+				DE2339362B84B4980093BBA2 /* Montserrat-Bold.ttf in Resources */,
+				DE23393A2B84B4AE0093BBA2 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +365,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE23391B2B8371680093BBA2 /* ContentView.swift in Sources */,
+				DE2339592B8798440093BBA2 /* WorkoutCardView.swift in Sources */,
+				DEB9FA6C2B8928AB0048A64B /* ExerciseDetailView.swift in Sources */,
+				DEB9FA6A2B8921480048A64B /* SettingsView.swift in Sources */,
+				DE23393E2B84B7630093BBA2 /* UserManager.swift in Sources */,
+				DEB9FA652B8919470048A64B /* WorkoutLevelSelector.swift in Sources */,
+				DE2339402B84BC870093BBA2 /* UserModel.swift in Sources */,
+				DE1302592B8BB3AA00B0BA92 /* CoreDataManager.swift in Sources */,
+				DE23395B2B8799140093BBA2 /* AsyncImage.swift in Sources */,
+				DE2339442B84BF570093BBA2 /* OnBoardViewModel.swift in Sources */,
+				DE2339542B865CEB0093BBA2 /* WorkoutModel.swift in Sources */,
+				DE23393C2B84B6BC0093BBA2 /* AuthViewModel.swift in Sources */,
+				DE2339322B8378120093BBA2 /* Font+Ext.swift in Sources */,
+				DE23394D2B84BFEB0093BBA2 /* OnBoardingView.swift in Sources */,
+				DE2339562B8666970093BBA2 /* KeyChainManager.swift in Sources */,
+				DE23391B2B8371680093BBA2 /* MainView.swift in Sources */,
+				DE23395D2B879E5D0093BBA2 /* CustomOverlay.swift in Sources */,
+				DEB9FA682B89209B0048A64B /* EulaView.swift in Sources */,
 				DE2339192B8371680093BBA2 /* WeirdWorkoutAppApp.swift in Sources */,
+				DE1302572B8B82B200B0BA92 /* HistoryView.swift in Sources */,
+				DE23395F2B87A2EA0093BBA2 /* BottomSheet.swift in Sources */,
+				DE2339522B8651CE0093BBA2 /* NetworkingManager.swift in Sources */,
+				DE23394B2B84BFCB0093BBA2 /* OnBoardingViewModel.swift in Sources */,
+				DE23392C2B8373DA0093BBA2 /* Color+Ext.swift in Sources */,
+				DE13025C2B8BB4B300B0BA92 /* WorkoutDataModel.xcdatamodeld in Sources */,
+				DEB9FA6E2B8A33260048A64B /* VideoView.swift in Sources */,
+				DE2339472B84BFA00093BBA2 /* OnBoardView.swift in Sources */,
+				DE2339612B87C1D60093BBA2 /* CornerRadius+Ext.swift in Sources */,
+				DE2339502B85299B0093BBA2 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,11 +528,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeirdWorkoutApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeirdWorkoutApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,9 +542,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = boogie.WeirdWorkoutApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,11 +562,13 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WeirdWorkoutApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeirdWorkoutApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,9 +576,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = boogie.WeirdWorkoutApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -342,6 +608,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE13025A2B8BB4B300B0BA92 /* WorkoutDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE13025B2B8BB4B300B0BA92 /* Workout.xcdatamodel */,
+			);
+			currentVersion = DE13025B2B8BB4B300B0BA92 /* Workout.xcdatamodel */;
+			path = WorkoutDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DE23390D2B8371680093BBA2 /* Project object */;
 }

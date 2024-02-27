@@ -1,8 +1,18 @@
-//
-//  EulaView.swift
-//  WeirdWorkoutApp
-//
-//  Created by MoonlitPrins8 on 23.02.24.
-//
+import SwiftUI
+import WebKit
 
-import Foundation
+struct EulaView: UIViewRepresentable {
+    var url: URL
+    
+    func makeUIView(context: Context) -> WKWebView {
+        let webView = WKWebView()
+        webView.allowsBackForwardNavigationGestures = true
+        webView.scrollView.isScrollEnabled = true
+        return webView
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        let request = URLRequest(url: url)
+        uiView.load(request)
+    }
+}

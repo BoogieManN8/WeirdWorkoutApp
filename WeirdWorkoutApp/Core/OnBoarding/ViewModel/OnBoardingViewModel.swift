@@ -1,8 +1,10 @@
-//
-//  OnBoardingViewModel.swift
-//  WeirdWorkoutApp
-//
-//  Created by MoonlitPrins8 on 20.02.24.
-//
-
 import Foundation
+
+final class OnBoardingViewModel: ObservableObject {
+    
+    let userManager: UserManager
+    
+    init(userManager: UserManager) {
+        self.userManager = userManager
+    }
+}
