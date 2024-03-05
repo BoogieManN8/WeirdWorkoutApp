@@ -191,11 +191,11 @@ enum EulaState: String {
     var rawValue: String {
         switch self {
         case .terms:
-            return "https://www.youtube.com"
+            return "https://www.freeprivacypolicy.com/live/635228f0-95c9-4184-99ec-23942fece580"
         case .privacy:
-            return "https://www.facebook.com"
+            return "https://www.freeprivacypolicy.com/live/36adbb9c-b62e-428d-a24a-c12ceb94825c"
         case .support:
-            return "https://www.google.com"
+            return "https://v9qjjfaf8qn.typeform.com/to/zEJyYkXT"
         }
     }
 }
