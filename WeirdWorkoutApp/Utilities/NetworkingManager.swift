@@ -3,7 +3,7 @@ import Combine
 
 final class NetworkingManager {
     static let shared = NetworkingManager()
-    let baseURL = "http://62.72.18.243:5000/"
+    let baseURL = "https://busapp.co/"
     
     var session: URLSession
     init(session: URLSession = .shared) {

@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import AuthenticationServices
 
 class UserManager: NSObject, ObservableObject {
     @Published var currentUser: UserModel?
@@ -11,12 +12,20 @@ class UserManager: NSObject, ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     
     func signInWithApple(){
-        // sends token to server
+        let appleIdProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIdProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.performRequests()
+        
     }
     
     
     func signInAsGuest(){
-        // send generated temporary token
+        let randomToken = generateRandomToken(length: 32)
+        self.createUser(isGuest: true, isPremium: false, token: randomToken, level: .crook)
     }
     
     func createUser(isGuest: Bool, isPremium: Bool, token: String, level: UserLevel) {
@@ -85,5 +94,45 @@ class UserManager: NSObject, ObservableObject {
             }
             .store(in: &cancellables)
     }
+ 
+    func generateRandomToken(length: Int) -> String {
+        
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        
+        let charactersArray = Array(characters)
+        
+        let randomString = (0..<length).map { _ in
+            charactersArray[Int(arc4random_uniform(UInt32(charactersArray.count)))]
+        }
+        
+        return String(randomString)
+    }
     
+}
+
+// MARK: - ASAuthorizationControllerDelegate
+extension UserManager: ASAuthorizationControllerDelegate {
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+
+            let userIdentifier = appleIDCredential.user
+            let token = appleIDCredential.identityToken
+            let email = appleIDCredential.email
+
+            
+            if let tokenData = token, let tokenString = String(data: tokenData, encoding: .utf8) {
+                print("TOKEN STRING \(tokenString)")
+                self.createUser(isGuest: false, isPremium: false, token: tokenString, level: .crook)
+            }
+            print("email \(String(describing: email))")
+            self.createUser(isGuest: false, isPremium: false, token: userIdentifier, level: .crook)
+            
+        } 
+    }
+    
+    func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map{ _ in letters.randomElement()! })
+    }
 }

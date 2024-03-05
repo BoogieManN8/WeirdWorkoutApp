@@ -131,7 +131,7 @@ extension OnBoardingView {
             .padding(.horizontal)
             VStack {
                 Button(action: {
-                    viewState = .notifications
+                    authViewModel.signInAsGuest()
                 }, label: {
                     Text("Continue as a guest")
                         .underline()
@@ -143,7 +143,7 @@ extension OnBoardingView {
                 
                 Button(action: {
                     withAnimation {
-                        authViewModel.checkUsersKeyAndFetch(shouldCreate: true)
+                        authViewModel.signInWithApple()
                     }
                 }, label: {
                     Text("Sign in with apple")

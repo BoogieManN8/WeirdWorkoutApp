@@ -35,7 +35,8 @@ struct OnBoardView: View {
                     .navigationTitle("")
                     .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
-                    .environmentObject(viewModel),
+                    .environmentObject(viewModel)
+                    .environmentObject(authViewModel),
                 isActive: $showSettings,
                 label: {
                     EmptyView()

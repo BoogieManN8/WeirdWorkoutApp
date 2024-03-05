@@ -3,7 +3,7 @@ import SwiftUI
 struct ExerciseDetailView: View {
     
     let bounds = UIScreen.main.bounds
-    let baseURL = "http://62.72.18.243:5000/"
+    let baseURL = "https://busapp.co/"
     let workoutLevel: Int
     let selectedWorkout: workoutType
     @Binding var workouts: [WorkoutModel]
@@ -28,7 +28,6 @@ struct ExerciseDetailView: View {
                         self.selectedExercise = workout
                     }
                     
-                    print("DEBUG: \("http://62.72.18.243:5000/\(selectedExercise?.image ?? workouts[2].image)")")
                 }
             VStack {
                 activeExerciseLayer
@@ -127,7 +126,7 @@ extension ExerciseDetailView {
         VStack(spacing: -10) {
             HStack {
                 if let exec = selectedExercise , let imageString = selectedExercise?.image {
-                    AsyncImage(url: URL(string: "http://62.72.18.243:5000/\(imageString)")!) {
+                    AsyncImage(url: URL(string: "http://busapp.co/\(imageString)")!) {
                         ProgressView()
                     }
                     .scaledToFill()
@@ -173,11 +172,14 @@ extension ExerciseDetailView {
                         .clipped()
                         .cornerRadius(12)
                         .id(UUID())
+                        .onAppear{
+                            print("DEBUG: video url - \(url)")
+                        }
                 } else {
                     Text("Something was not right")
                 }
             } else {
-                AsyncImage(url: URL(string: "http://62.72.18.243:5000/body/images/Burpees.jpeg")!) {
+                AsyncImage(url: URL(string: "https://busapp.co/body/images/Burpees.jpeg")!) {
                     ProgressView()
                 }
                 .scaledToFill()
@@ -207,7 +209,7 @@ extension ExerciseDetailView {
                 VStack (spacing: -20) {
                     ForEach(Array(workouts).sorted(by: { $0.id < $1.id }), id: \.id) { item in
                         HStack {
-                            AsyncImage(url: URL(string: "http://62.72.18.243:5000/\(item.image)")!) {
+                            AsyncImage(url: URL(string: "https://busapp.co/\(item.image)")!) {
                                 ProgressView()
                             }
                             .scaledToFill()
@@ -249,7 +251,7 @@ extension ExerciseDetailView {
             }
             HStack {
                 
-                AsyncImage(url: URL(string: "http://62.72.18.243:5000/\(selectedExercise?.image ?? "body/images/Burpees.jpeg")")!) {
+                AsyncImage(url: URL(string: "https://busapp.co/\(selectedExercise?.image ?? "body/images/Burpees.jpeg")")!) {
                     ProgressView()
                 }
                 .scaledToFill()
@@ -331,7 +333,7 @@ extension ExerciseDetailView {
     
 }
 
-// delete last item if exists , else show bottom sheet with time spent, increase points and exercises count
+
 
 // MARK: - HELPERS
 extension ExerciseDetailView {

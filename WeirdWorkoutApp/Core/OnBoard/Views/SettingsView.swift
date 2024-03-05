@@ -81,6 +81,20 @@ struct SettingsView: View {
                             .background(RoundedRectangle(cornerRadius: 12).fill(Color.theme.blue))
                     })
                     
+                    
+                    if var user = authViewModel.currentUser, user.isGuest {
+                        Button(action: {
+                            authViewModel.signInWithApple()
+                        }, label: {
+                            Text("Sign in with apple")
+                                .padding()
+                                .foregroundColor(.white)
+                                .font(.theme.bold)
+                                .frame(width: bounds.width * 0.7, height: 55)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Color.theme.blue))
+                        })
+                    }
+                    
                     Button(action: {
                         showAlert = true
                     }, label: {

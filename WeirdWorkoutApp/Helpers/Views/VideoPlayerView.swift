@@ -20,7 +20,6 @@ struct VideoPlayerView: View {
     @State private var orientation: UIDeviceOrientation = UIDevice.current.orientation
     
 
-    
     var body: some View {
         ZStack {
             Group {
@@ -41,6 +40,8 @@ struct VideoPlayerView: View {
         }
         .onAppear{
             self.player = AVPlayer(url: videoURL)
+            let isPlayable = AVAsset(url: videoURL).isPlayable
+            print("DEBUG: is playable \(isPlayable)")
         }
     }
     
@@ -49,6 +50,7 @@ struct VideoPlayerView: View {
             self.isVideoPlaying = rate > 0
         }
     }
+    
     
     
 }

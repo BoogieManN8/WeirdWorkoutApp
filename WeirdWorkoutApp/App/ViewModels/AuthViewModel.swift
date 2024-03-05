@@ -17,11 +17,11 @@ final class AuthViewModel: ObservableObject {
     }
     
     func signInWithApple(){
-        
+        userManager.signInWithApple()
     }
     
     func signInAsGuest() {
-        
+        userManager.signInAsGuest()
     }
     
     func testCreation(){
@@ -46,6 +46,7 @@ final class AuthViewModel: ObservableObject {
     func deleteUser(){
         userManager.deleteUser(by: currentUser?.userToken ?? "")
         userManager.currentUser = nil
+        isAuthenticated = false
     }
     
     func userListener(){
@@ -62,5 +63,20 @@ final class AuthViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    
+    
+    
+    func generateRandomToken(length: Int) -> String {
+        
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        
+        let charactersArray = Array(characters)
+        
+        let randomString = (0..<length).map { _ in
+            charactersArray[Int(arc4random_uniform(UInt32(charactersArray.count)))]
+        }
+        
+        return String(randomString)
+    }
     
 }
