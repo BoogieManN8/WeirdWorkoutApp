@@ -31,6 +31,8 @@ class OnBoardViewModel: ObservableObject {
         setUpUserListener()
         fetchAllWorkouts()
         fetchWorkoutsFromCore()
+        
+        
     }
     
     
@@ -145,6 +147,7 @@ extension OnBoardViewModel {
         self.fetchLegWorkouts()
         self.fetchSpeedWorkouts()
         self.fetchTorsoWorkouts()
+        
     }
     
 }

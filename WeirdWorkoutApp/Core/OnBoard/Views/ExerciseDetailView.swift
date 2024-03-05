@@ -22,6 +22,8 @@ struct ExerciseDetailView: View {
             Color.theme.darkBlue
                 .ignoresSafeArea(.all)
                 .onAppear{
+//                    self.presentationMode.wrappedValue.navigationBarHidden = true
+                    
                     workouts = workouts.filter({ $0.difficulty == workoutLevel })
                     if let workout = workouts.first {
                         print("DEBUG: \(workout)")
@@ -110,6 +112,15 @@ struct ExerciseDetailView: View {
                 .padding()
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarTitle("", displayMode: .inline)
+        .edgesIgnoringSafeArea([.top, .bottom])
+    }
+    
+    private func hideNavigationBar() {
+        if let navigationController = UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
+            navigationController.setNavigationBarHidden(true, animated: false)
+        }
     }
 }
 
@@ -125,18 +136,19 @@ extension ExerciseDetailView {
     var activeExerciseLayer: some View {
         VStack(spacing: -10) {
             HStack {
-                if let exec = selectedExercise , let imageString = selectedExercise?.image {
-                    AsyncImage(url: URL(string: "http://busapp.co/\(imageString)")!) {
-                        ProgressView()
+                if let exec = selectedExercise  {
+                    let urlString = "https://busapp.co/\(exec.image)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                    if let encodedURLString = urlString, let imageURL = URL(string: encodedURLString) {
+                        AsyncImage(url: imageURL) {
+                            ProgressView()
+                        }
+                        .scaledToFill()
+                        .frame(width: 70, height: 60)
+                        .cornerRadius(12)
+                        .clipped()
+                        .padding()
                     }
-                    .scaledToFill()
-                    .frame(width: 70, height: 60)
-                    .cornerRadius(12)
-                    .clipped()
-                    .padding()
                 }
-                
-                
                 
                 VStack(alignment: .leading) {
                     Text("\(selectedExercise?.name ?? "")")
@@ -164,6 +176,9 @@ extension ExerciseDetailView {
             .frame(width: bounds.width * 0.86)
             .background(RoundedRectangle(cornerRadius: 12).fill(Color.theme.blue))
             .padding()
+            .onAppear{
+                print("DEBUG: image - \(selectedExercise?.image ?? "image nil")")
+            }
             
             if isVideoPlaying {
                 if let urlString = "\(baseURL)\(selectedExercise?.video ?? chosenVideo)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlString) {
@@ -209,14 +224,19 @@ extension ExerciseDetailView {
                 VStack (spacing: -20) {
                     ForEach(Array(workouts).sorted(by: { $0.id < $1.id }), id: \.id) { item in
                         HStack {
-                            AsyncImage(url: URL(string: "https://busapp.co/\(item.image)")!) {
-                                ProgressView()
+                            
+                            if let urlString = "https://busapp.co/\(item.image)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                               let imageURL = URL(string: urlString) {
+                                AsyncImage(url: imageURL) {
+                                    ProgressView()
+                                }
+                                .scaledToFill()
+                                .frame(width: 70, height: 60)
+                                .cornerRadius(12)
+                                .clipped()
+                                .padding()
                             }
-                            .scaledToFill()
-                            .frame(width: 70, height: 60)
-                            .cornerRadius(12)
-                            .clipped()
-                            .padding()
+                            
                             
                             VStack(alignment: .leading) {
                                 Text("\(item.name)")
@@ -250,15 +270,19 @@ extension ExerciseDetailView {
                 
             }
             HStack {
-                
-                AsyncImage(url: URL(string: "https://busapp.co/\(selectedExercise?.image ?? "body/images/Burpees.jpeg")")!) {
-                    ProgressView()
+                if let imageName = selectedExercise?.image,
+                   let urlString = "https://busapp.co/\(imageName)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                   let imageURL = URL(string: urlString) {
+                    AsyncImage(url: imageURL) {
+                        ProgressView()
+                    }
+                    .scaledToFill()
+                    .frame(width: 70, height: 60)
+                    .cornerRadius(12)
+                    .clipped()
+                    .padding()
                 }
-                .scaledToFill()
-                .frame(width: 70, height: 60)
-                .cornerRadius(12)
-                .clipped()
-                .padding()
+                
                 
                 VStack(alignment: .leading) {
                     Text("\(selectedExercise?.name ?? "")")
@@ -373,5 +397,14 @@ extension ExerciseDetailView {
         
         currentUser.points += pointsToAdd
         viewModel.updateUser(user: currentUser)
+    }
+}
+struct HideNavigationBar: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        UIViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        uiViewController.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

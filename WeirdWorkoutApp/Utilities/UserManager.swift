@@ -5,7 +5,7 @@ import AuthenticationServices
 class UserManager: NSObject, ObservableObject {
     @Published var currentUser: UserModel?
     
-    let baseURL = "http://62.72.18.243:5000/"
+    let baseURL = "https://busapp.co/"
     let networkingManager = NetworkingManager.shared
     let keychanManager = KeychainManager.shared
     
@@ -128,7 +128,7 @@ extension UserManager: ASAuthorizationControllerDelegate {
             print("email \(String(describing: email))")
             self.createUser(isGuest: false, isPremium: false, token: userIdentifier, level: .crook)
             
-        } 
+        }
     }
     
     func randomString(length: Int) -> String {

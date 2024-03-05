@@ -28,6 +28,9 @@ struct HistoryView: View {
         ZStack {
             Color.theme.darkBlue
                 .ignoresSafeArea(.all)
+                .onAppear{
+                    viewModel.fetchWorkoutsFromCore()
+                }
             
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {

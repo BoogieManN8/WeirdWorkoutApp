@@ -14,13 +14,17 @@ struct WorkoutCardView: View {
                 .frame(width: bounds.width * 0.9, height: 80)
                 
             HStack (alignment: .top) {
-                AsyncImage(url: URL(string: image)!) {
-                    ProgressView()
+                if let encodedImageString = image.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+                   let imageURL = URL(string: encodedImageString) {
+                    AsyncImage(url: imageURL) {
+                        ProgressView()
+                    }
+                    .scaledToFill()
+                    .frame(width: 70, height: 60)
+                    .cornerRadius(12)
+                    .clipped()
                 }
-                .scaledToFill()
-                .frame(width: 70, height: 60)
-                .cornerRadius(12)
-                .clipped()
+                
                 
                 VStack (alignment: .leading, spacing: 10) {
                     Text("\(title)")

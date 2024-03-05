@@ -7,7 +7,7 @@ struct OnBoardView: View {
     @EnvironmentObject var viewModel: OnBoardViewModel
     @EnvironmentObject var authViewModel: AuthViewModel
     let bounds = UIScreen.main.bounds
-    let baseURL = "http://62.72.18.243:5000/"
+    let baseURL = "https://busapp.co/"
     @State var showBottomSheet: Bool = false
     @State var activeWorkoutLevel: Int = 0
     
@@ -23,6 +23,13 @@ struct OnBoardView: View {
             set: { self.selectedWorkout = $0 }
         )
     }
+    
+    let workoutImages: [String: String] = [
+        "body": "https://imgs.search.brave.com/_vDezj7VJRMxnMY0LdeWjgmSXTDURA3lxiwCvpcxlNY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy9zaG90/LW9mLWEtbXVzY3Vs/YXIteW91bmctbWFu/LWV4ZXJjaXNpbmct/d2l0aC1hLXJveWFs/dHktZnJlZS1pbWFn/ZS0xNzAyNjUyMTA3/LmpwZz9jcm9wPTAu/NjQxeHc6MS4wMHho/OzAuMzE1eHcsMCZy/ZXNpemU9MzYwOio",
+        "leg": "https://imgs.search.brave.com/19aH5hjJZq9yAhaq5MxN_Ml7irBRafYA2jXxUFsJJJc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/dGhldHJlbmRzcG90/dGVyLm5ldC93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMC8wNS9U/aGUtVWx0aW1hdGUt/TGVnLVdvcmtvdXQt/LmpwZw",
+        "torso": "https://barbend.com/wp-content/uploads/2023/06/push-up-barbend.com_-1.jpg",
+        "speed": "https://gridironelitetraining.com/wp-content/uploads/2022/07/how-to-improve-running-speed-for-football.jpg"
+    ]
     
     var body: some View {
         ZStack {
@@ -53,16 +60,19 @@ struct OnBoardView: View {
                     EmptyView()
                 })
             
+            
             NavigationLink(
                 destination: ExerciseDetailView(workoutLevel: selectedWorkoutLevel, selectedWorkout: selectedWorkoutType, workouts: nonOptionalWorkoutsBinding)
-                    .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
+                    .environmentObject(viewModel)
                     .navigationTitle("")
-                    .environmentObject(viewModel),
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true),
                 isActive: $showDetails,
                 label: {
                     EmptyView()
-                })
+                }
+            )
             
             
             VStack(alignment: .leading) {
@@ -178,7 +188,10 @@ extension OnBoardView {
         VStack {
             ScrollView(showsIndicators: false) {
                 ForEach(Array(viewModel.allWorkouts).sorted(by: { $0.id < $1.id }), id: \.id) { item in
-                    WorkoutCardView(image: "https://barbend.com/wp-content/uploads/2023/06/push-up-barbend.com_-1.jpg", title: "\(item.category)", numberOfExercies: item.workout.count, description: nil)
+                    
+                    let imageForCategory = workoutImages[item.category.rawValue] ?? "https://barbend.com/wp-content/uploads/2023/06/push-up-barbend.com_-1.jpg"
+                    
+                    WorkoutCardView(image: imageForCategory, title: "\(item.category)", numberOfExercies: item.workout.count, description: nil)
                         .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                         .listRowBackground(Color.clear)
                         .overlay(alignment: .trailing) {
@@ -187,13 +200,12 @@ extension OnBoardView {
                                     selectedWorkoutType = item.category
                                     selectedWorkout = item.workout
                                     showBottomSheet = true
-//                                    showDetails = true
+                                    // showDetails = true
                                 }
                             }, label: {
                                 Image("play")
                                     .padding(.trailing)
                             })
-                            
                         }
                 }
             }

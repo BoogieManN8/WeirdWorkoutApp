@@ -5,6 +5,7 @@ struct MainView: View {
     @StateObject var authViewModel: AuthViewModel
     @StateObject var onBoardViewModel: OnBoardViewModel
     @StateObject var onBoardingViewModel: OnBoardingViewModel
+    @State var showSplash: Bool = true
     
     init(){
         let userManager = UserManager()
@@ -14,18 +15,34 @@ struct MainView: View {
     }
     
     var body: some View {
-        if authViewModel.isAuthenticated {
-            OnBoardView()
-                .navigationTitle("")
-                .navigationBarHidden(true)
-                .environmentObject(onBoardViewModel)
-                .environmentObject(authViewModel)
-        } else {
-            OnBoardingView()
-                .navigationTitle("")
-                .navigationBarHidden(true)
-                .environmentObject(authViewModel)
+        ZStack {
+            
+            if authViewModel.isAuthenticated {
+                OnBoardView()
+                    .navigationTitle("")
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .environmentObject(onBoardViewModel)
+                    .environmentObject(authViewModel)
+            } else {
+                OnBoardingView()
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
+                    .environmentObject(authViewModel)
+            }
+            if showSplash {
+                SplashScreenView()
+                    .onAppear{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                            withAnimation{
+                                showSplash = false
+                            }
+                        }
+                    }
+            }
+            
         }
+        
     }
 }
 
