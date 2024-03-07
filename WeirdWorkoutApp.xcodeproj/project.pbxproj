@@ -35,6 +35,7 @@
 		DE23395D2B879E5D0093BBA2 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23395C2B879E5D0093BBA2 /* CustomOverlay.swift */; };
 		DE23395F2B87A2EA0093BBA2 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE23395E2B87A2EA0093BBA2 /* BottomSheet.swift */; };
 		DE2339612B87C1D60093BBA2 /* CornerRadius+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2339602B87C1D60093BBA2 /* CornerRadius+Ext.swift */; };
+		DE7069C52B99A9FD0099F201 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7069C42B99A9FD0099F201 /* AppDelegate.swift */; };
 		DEB9FA652B8919470048A64B /* WorkoutLevelSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA642B8919470048A64B /* WorkoutLevelSelector.swift */; };
 		DEB9FA682B89209B0048A64B /* EulaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA672B89209B0048A64B /* EulaView.swift */; };
 		DEB9FA6A2B8921480048A64B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9FA692B8921480048A64B /* SettingsView.swift */; };
@@ -46,6 +47,7 @@
 		DE1302562B8B82B200B0BA92 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		DE1302582B8BB3AA00B0BA92 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DE13025B2B8BB4B300B0BA92 /* Workout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workout.xcdatamodel; sourceTree = "<group>"; };
+		DE170C9F2B974C4400C95150 /* WeirdWorkoutApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeirdWorkoutApp.entitlements; sourceTree = "<group>"; };
 		DE2339152B8371680093BBA2 /* WeirdWorkoutApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeirdWorkoutApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2339182B8371680093BBA2 /* WeirdWorkoutAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeirdWorkoutAppApp.swift; sourceTree = "<group>"; };
 		DE23391A2B8371680093BBA2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		DE23395C2B879E5D0093BBA2 /* CustomOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
 		DE23395E2B87A2EA0093BBA2 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
 		DE2339602B87C1D60093BBA2 /* CornerRadius+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Ext.swift"; sourceTree = "<group>"; };
+		DE7069C42B99A9FD0099F201 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEB9FA642B8919470048A64B /* WorkoutLevelSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLevelSelector.swift; sourceTree = "<group>"; };
 		DEB9FA672B89209B0048A64B /* EulaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EulaView.swift; sourceTree = "<group>"; };
 		DEB9FA692B8921480048A64B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		DE2339172B8371680093BBA2 /* WeirdWorkoutApp */ = {
 			isa = PBXGroup;
 			children = (
+				DE170C9F2B974C4400C95150 /* WeirdWorkoutApp.entitlements */,
 				DE2339332B837A0E0093BBA2 /* Info.plist */,
 				DE2339262B8373680093BBA2 /* App */,
 				DE2339412B84BC8F0093BBA2 /* Models */,
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				DE23393B2B84B6BC0093BBA2 /* AuthViewModel.swift */,
+				DE7069C42B99A9FD0099F201 /* AppDelegate.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				DEB9FA6C2B8928AB0048A64B /* ExerciseDetailView.swift in Sources */,
 				DEB9FA6A2B8921480048A64B /* SettingsView.swift in Sources */,
 				DE23393E2B84B7630093BBA2 /* UserManager.swift in Sources */,
+				DE7069C52B99A9FD0099F201 /* AppDelegate.swift in Sources */,
 				DEB9FA652B8919470048A64B /* WorkoutLevelSelector.swift in Sources */,
 				DE2339402B84BC870093BBA2 /* UserModel.swift in Sources */,
 				DE1302592B8BB3AA00B0BA92 /* CoreDataManager.swift in Sources */,
@@ -523,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeirdWorkoutApp/WeirdWorkoutApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeirdWorkoutApp/Preview Content\"";
@@ -559,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WeirdWorkoutApp/WeirdWorkoutApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WeirdWorkoutApp/Preview Content\"";

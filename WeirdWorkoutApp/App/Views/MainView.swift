@@ -29,6 +29,7 @@ struct MainView: View {
                     .navigationTitle("")
                     .navigationBarHidden(true)
                     .environmentObject(authViewModel)
+                    .environmentObject(onBoardingViewModel)
             }
             if showSplash {
                 SplashScreenView()

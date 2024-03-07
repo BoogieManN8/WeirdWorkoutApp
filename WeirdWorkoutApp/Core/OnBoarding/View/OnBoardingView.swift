@@ -9,6 +9,7 @@ struct OnBoardingView: View {
     let bounds: CGRect = UIScreen.main.bounds
     @State var viewState: ViewState = .notifications
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var viewModel: OnBoardingViewModel
     
     
     @State var showEula: Bool = false
@@ -80,6 +81,7 @@ extension OnBoardingView {
             VStack {
                 Button(action: {
                     withAnimation {
+                        viewModel.requestNotificationPermission()
                         viewState = .signUp
                     }
                 }, label: {

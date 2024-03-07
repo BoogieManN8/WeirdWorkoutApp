@@ -1,4 +1,6 @@
 import Foundation
+import UserNotifications
+import UIKit
 
 final class OnBoardingViewModel: ObservableObject {
     
@@ -7,4 +9,14 @@ final class OnBoardingViewModel: ObservableObject {
     init(userManager: UserManager) {
         self.userManager = userManager
     }
+    
+    func requestNotificationPermission() {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+                guard granted else { return }
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
+    
 }

@@ -3,6 +3,8 @@ import SwiftUI
 @main
 struct WeirdWorkoutAppApp: App {
     @State var showSplashScreen: Bool = true
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
