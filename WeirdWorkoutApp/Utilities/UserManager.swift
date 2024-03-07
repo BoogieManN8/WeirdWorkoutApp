@@ -38,6 +38,7 @@ class UserManager: NSObject, ObservableObject {
                     break
                 case .failure(let error):
                     print("ERROR: failed to create user[\(user)] \(error)")
+                    self.fetchUser(with: token)
                 }
             } receiveValue: { [weak self] data in
                 self?.currentUser = user

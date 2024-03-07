@@ -349,7 +349,8 @@ extension ExerciseDetailView {
                 
                 
             }
-            .padding(.horizontal)
+            .padding()
+            .padding(.top, 30)
             
         }
         .frame(height: bounds.height * 0.09)
