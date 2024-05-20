@@ -38,7 +38,7 @@ struct HistoryView: View {
                         Section(header: Text(dateString).foregroundColor(.gray).font(Font.theme.semiBold)) {
                             ForEach(groupedHistoryData[dateString] ?? [], id: \.id) { workout in
                                 WorkoutCardView(
-                                    image: "http://62.72.18.243:5000/\(workout.image)",
+                                    image: "https://busapp.co/\(workout.image)",
                                     title: workout.name,
                                     numberOfExercies: 25,
                                     description: workout.description

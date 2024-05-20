@@ -5,7 +5,6 @@ class CoreDataManager {
     let persistentContainer: NSPersistentContainer
 
     private init() {
-        
         persistentContainer = NSPersistentContainer(name: "WorkoutDataModel")
         persistentContainer.loadPersistentStores { _, error in
             if let error = error {
@@ -13,8 +12,7 @@ class CoreDataManager {
             }
         }
     }
-    
-    
+
     func createWorkout(id: String, name: String, workoutDescription: String, image: String, video: String, difficulty: Int, category: workoutType) {
         let context = persistentContainer.viewContext
         let workout = Workout(context: context)
@@ -34,17 +32,12 @@ class CoreDataManager {
             workoutCategory.category = category.rawValue
 
             workoutCategory.addToWorkout(workout)
-            
-            
-            
             try context.save()
         } catch {
             print("Failed to save workout: \(error)")
         }
     }
 
-
-    
     func fetchAllWorkouts() -> [WorkoutModel] {
         let context = persistentContainer.viewContext
         let fetchRequest: NSFetchRequest<Workout> = Workout.fetchRequest()
@@ -58,12 +51,10 @@ class CoreDataManager {
                       let workoutDescription = workout.workoutDescription,
                       let image = workout.image,
                       let video = workout.video else {
-                    
                     print("Error: Workout data is incomplete for item with id \(workout.id ?? "unknown")")
                     continue
                 }
                 
-                // Create a WorkoutModel for each valid workout
                 let workoutModel = WorkoutModel(id: id, name: name, description: workoutDescription, image: image, video: video, difficulty: Int(workout.difficulty), createdAt: Date())
                 workoutModels.append(workoutModel)
             }
@@ -74,4 +65,21 @@ class CoreDataManager {
         }
     }
 
+    
+    func deleteAllData() {
+        let context = persistentContainer.viewContext
+        let fetchRequestWorkout: NSFetchRequest<NSFetchRequestResult> = Workout.fetchRequest()
+        let fetchRequestCategory: NSFetchRequest<NSFetchRequestResult> = WorkoutCategory.fetchRequest()
+
+        let deleteRequestWorkout = NSBatchDeleteRequest(fetchRequest: fetchRequestWorkout)
+        let deleteRequestCategory = NSBatchDeleteRequest(fetchRequest: fetchRequestCategory)
+
+        do {
+            try context.execute(deleteRequestWorkout)
+            try context.execute(deleteRequestCategory)
+            try context.save()
+        } catch {
+            print("Failed to delete all data: \(error)")
+        }
+    }
 }

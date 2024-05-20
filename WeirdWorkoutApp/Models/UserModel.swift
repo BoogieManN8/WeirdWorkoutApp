@@ -5,7 +5,7 @@ enum UserLevel: Int, Codable {
     case medium = 1
     case pro = 2
 }
-//{"id":"48AC055F-0B8B-4EAE-AEC1-EF7959433A2B","isGuest":1,"isPremium":0,"userToken":"random token","userLevel":15,"points":0}
+
 struct UserModel: Codable {
     let id: String
     let isGuest: Bool

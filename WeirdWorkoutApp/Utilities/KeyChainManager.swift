@@ -40,6 +40,7 @@ class KeychainManager {
         return saveToken(token: newToken, account: account)
     }
     
+    @discardableResult
     func deleteToken(account: String) -> Bool {
         let query: [CFString: Any] = [kSecClass: kSecClassGenericPassword,
                                        kSecAttrAccount: account]

@@ -55,7 +55,7 @@ extension OnBoardViewModel {
             }, receiveValue: { user in
                 DispatchQueue.main.async{
                     self.currentUser = user
-                    print("DEBUG: user was assigned \(self.currentUser)")
+                    print("DEBUG: user was assigned \(String(describing: self.currentUser))")
                 }
             })
             .store(in: &cancellables)

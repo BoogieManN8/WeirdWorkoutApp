@@ -54,7 +54,7 @@ class UserManager: NSObject, ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    print("DEBUG: Could not fetch user[\(id)] - \(error)")
+                    print("DEBUG: Could not fetch user[\(id)] - \(error.localizedDescription)")
                 }
             } receiveValue: { [weak self] user in
                 self?.currentUser = user
