@@ -10,6 +10,7 @@ final class OnBoardingViewModel: ObservableObject {
         self.userManager = userManager
     }
     
+    
     func requestNotificationPermission() {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
                 guard granted else { return }
