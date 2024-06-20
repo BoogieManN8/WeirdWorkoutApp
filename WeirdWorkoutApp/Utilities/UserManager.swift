@@ -125,9 +125,11 @@ extension UserManager: ASAuthorizationControllerDelegate {
             if let tokenData = token, let tokenString = String(data: tokenData, encoding: .utf8) {
                 print("TOKEN STRING \(tokenString)")
                 self.createUser(isGuest: false, isPremium: false, token: tokenString, level: .crook)
+            } else {
+                print("email \(String(describing: email))")
+                self.createUser(isGuest: false, isPremium: false, token: userIdentifier, level: .crook)
             }
-            print("email \(String(describing: email))")
-            self.createUser(isGuest: false, isPremium: false, token: userIdentifier, level: .crook)
+            
             
         }
     }
