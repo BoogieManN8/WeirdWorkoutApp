@@ -44,6 +44,9 @@ final class AuthViewModel: ObservableObject {
     }
     
     func deleteUser(){
+        NetworkingManager.shared.deleteUser(userID: currentUser?.id ?? "")
+            .sink { _ in } receiveValue: { _ in }
+            .store(in: &cancellables)
         CoreDataManager.shared.deleteAllData()
         userManager.deleteUser(by: currentUser?.userToken ?? "")
         keyChainManager.deleteToken(account: "com.weirdworkoutappl")

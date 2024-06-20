@@ -70,7 +70,7 @@ extension NetworkingManager {
     
     func fetchUser(userID: String) -> AnyPublisher<UserModel, Error> {
         let request = makeRequest(to: "users/\(userID)", method: "GET")
-        print("DEBUG: \(request.url)")
+        
         return sendRequest(request)
             .decode(type: UserModel.self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)

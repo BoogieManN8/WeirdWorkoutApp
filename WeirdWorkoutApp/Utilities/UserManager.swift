@@ -37,7 +37,7 @@ class UserManager: NSObject, ObservableObject {
                 case .finished:
                     break
                 case .failure(let error):
-                    print("ERROR: failed to create user[\(user)] \(error)")
+                    print("ERROR: failed to create user[\(user)] \(error.localizedDescription)")
                     self.fetchUser(with: token)
                 }
             } receiveValue: { [weak self] data in
